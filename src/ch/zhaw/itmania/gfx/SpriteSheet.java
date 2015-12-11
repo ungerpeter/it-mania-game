@@ -11,18 +11,34 @@ public class SpriteSheet {
     private String path;
     private int width;
     private int height;
+    private BufferedImage bufferedImage;
     private int[] pixels;
 
     public SpriteSheet(String path) {
-        BufferedImage image = null;
         try {
-            image = ImageIO.read(SpriteSheet.class.getResourceAsStream(path));
+            bufferedImage = ImageIO.read(SpriteSheet.class.getResourceAsStream(path));
         } catch (IOException e) {
             e.printStackTrace();
         }
         this.path = path;
-        width = image.getWidth();
-        height = image.getHeight();
-        pixels = image.getRGB(0, 0, width, height, null, 0, width);
+        width = bufferedImage.getWidth();
+        height = bufferedImage.getHeight();
+        pixels = bufferedImage.getRGB(0, 0, width, height, null, 0, width);
+    }
+
+    public int getWidth() {
+        return width;
+    }
+
+    public int getPixelAt(int index) {
+        return pixels[index];
+    }
+
+    public BufferedImage getBufferedImage() {
+        return bufferedImage;
+    }
+
+    public BufferedImage crop(int x, int y, int width, int height) {
+        return bufferedImage.getSubimage(x, y, width, height);
     }
 }

@@ -1,5 +1,8 @@
 package ch.zhaw.itmania.game;
 
+import ch.zhaw.itmania.gfx.Assets;
+import ch.zhaw.itmania.gfx.SpriteSheet;
+
 import javax.swing.*;
 import java.awt.*;
 import java.awt.image.BufferStrategy;
@@ -24,8 +27,13 @@ public class Game extends Canvas implements Runnable {
     private BufferedImage bufferedImage = new BufferedImage(WIDTH, HEIGHT, BufferedImage.TYPE_INT_RGB);
     private int[] pixels = ((DataBufferInt) bufferedImage.getRaster().getDataBuffer()).getData();
     private BufferStrategy bufferStrategy;
+    private BufferedImage testBufferedImage;
+    private int tempCount = 0;
 
     public Game() {
+
+        // Load Assets
+        Assets.init();
 
         // Setup UI Frame
         this.setSize(WIDTH, HEIGHT);
@@ -40,6 +48,8 @@ public class Game extends Canvas implements Runnable {
 
         createBufferStrategy(BUFFER_LVL);
         bufferStrategy = getBufferStrategy();
+
+        testBufferedImage = Assets.PLAYER1;
     }
 
     @Override
@@ -66,6 +76,14 @@ public class Game extends Canvas implements Runnable {
                 System.out.println("(FPS: "+ FPS +")");
                 lastFpsTime = 0;
                 FPS = 0;
+                if(tempCount == 1) {
+                    testBufferedImage = Assets.PLAYER1;
+                    tempCount = 0;
+                } else {
+                    testBufferedImage = Assets.PLAYER2;
+                    tempCount = 1;
+                }
+
             }
 
             // update the game logic
@@ -91,6 +109,7 @@ public class Game extends Canvas implements Runnable {
         g.setColor(Color.BLACK);
         g.fillRect(0, 0, getWidth(), getHeight());
         g.drawImage(bufferedImage, 0, 0, getWidth(), getHeight(), null);
+        g.drawImage(testBufferedImage, 0, 0, testBufferedImage.getWidth(), testBufferedImage.getHeight(), null);
         g.dispose();
         bufferStrategy.show();
     }
@@ -115,9 +134,11 @@ public class Game extends Canvas implements Runnable {
             }
         }*/
 
-        for (int i = 0; i < pixels.length; i++) {
-            pixels[i] = (int)deltaTime + i;
-        }
+        /*for (int i = 0; i < pixels.length; i++) {
+            pixels[i] = 555555 + FPS * 3;
+        }*/
+
+
 
     }
 
