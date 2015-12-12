@@ -1,5 +1,6 @@
 package ch.zhaw.itmania.worlds;
 
+import ch.zhaw.itmania.objects.tiles.GrassTile;
 import ch.zhaw.itmania.objects.tiles.Tile;
 import ch.zhaw.itmania.utils.FileUtils;
 
@@ -36,7 +37,7 @@ public class World {
 
     public Tile getTile(int x, int y) {
         Tile t = Tile.tiles[tiles[x][y]];
-        if(t == null) return Tile.grassTile;
+        if(t == null) return new GrassTile(999);
         return t;
     }
     private void loadWorld(String path) {
