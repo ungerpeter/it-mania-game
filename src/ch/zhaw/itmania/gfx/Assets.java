@@ -11,6 +11,9 @@ public class Assets {
 
     public static BufferedImage PLAYER1, PLAYER2;
 
+    /**
+     * Load all Assets for the game.
+     */
     public static void init() {
         SpriteSheet spriteSheet = new SpriteSheet("/sprite_player.png");
         PLAYER1 = spriteSheet.crop(width*0,height*0,width,height);

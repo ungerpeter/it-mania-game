@@ -20,6 +20,10 @@ public class Display extends Canvas {
         initDisplay();
     }
 
+    /**
+     * Initialize the Display class.
+     * Set JFrame & Canvas properties.
+     */
     private void initDisplay() {
 
         // Set JFrame Properties
@@ -44,6 +48,11 @@ public class Display extends Canvas {
         return frame;
     }
 
+    /**
+     * Generates a BufferStrategy for the Canvas depends on the BufferLVL.
+     * @param bufferLvl
+     * @return BufferStategy
+     */
     public BufferStrategy generateBufferStrategy(int bufferLvl) {
         createBufferStrategy(bufferLvl);
         return getBufferStrategy();

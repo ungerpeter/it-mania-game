@@ -5,7 +5,9 @@ import java.awt.image.BufferedImage;
 import java.io.IOException;
 
 /**
- * Created by ungerpet on 09.12.2015.
+ *
+ * Created by Peter Unger on 09.12.2015.
+ *
  */
 public class SpriteSheet {
     private String path;
@@ -14,6 +16,11 @@ public class SpriteSheet {
     private BufferedImage bufferedImage;
     private int[] pixels;
 
+    /**
+     * Loads a Sprite Sheet image from the given path.
+     * (Relative to res folder)
+     * @param path
+     */
     public SpriteSheet(String path) {
         try {
             bufferedImage = ImageIO.read(SpriteSheet.class.getResourceAsStream(path));
@@ -38,6 +45,14 @@ public class SpriteSheet {
         return bufferedImage;
     }
 
+    /**
+     * Return a subimage at the given location of the SpriteSheet.
+     * @param x the X-Position in the SpriteSheet.
+     * @param y the Y-Position in the SpriteSheet.
+     * @param width the width of the subimage.
+     * @param height the height of the subimage.
+     * @return BufferedImage (subimage from SpriteSheet)
+     */
     public BufferedImage crop(int x, int y, int width, int height) {
         return bufferedImage.getSubimage(x, y, width, height);
     }

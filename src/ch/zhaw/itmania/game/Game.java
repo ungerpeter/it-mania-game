@@ -1,10 +1,11 @@
 package ch.zhaw.itmania.game;
 
 import ch.zhaw.itmania.gfx.Assets;
+import ch.zhaw.itmania.gfx.Screen;
+import ch.zhaw.itmania.input.KeyManager;
 
 import java.awt.*;
 import java.awt.image.BufferStrategy;
-import java.awt.image.BufferedImage;
 
 /**
  *
@@ -14,17 +15,15 @@ import java.awt.image.BufferedImage;
 public class Game implements Runnable {
 
     private static final int BUFFER_LVL = 3;
+    private static final int TARGET_FPS = 60;
     private final Display display;
+    private Screen screen;
     private BufferStrategy bufferStrategy;
 
     // Game Loop Fields
     private boolean running = false;
     private long lastFpsTime;
     private int FPS;
-
-    // Tests
-    private BufferedImage testBufferedImage;
-    private int tempCount = 0;
 
     public Game() {
 
@@ -35,15 +34,20 @@ public class Game implements Runnable {
         display = new Display();
         bufferStrategy = display.generateBufferStrategy(BUFFER_LVL);
 
-        // Tests
-        testBufferedImage = Assets.PLAYER1;
+        // Setup Key Manager
+        KeyManager keyManager = new KeyManager();
+        display.getWindowFrame().addKeyListener(keyManager);
+        screen = new Screen(keyManager);
     }
 
+    /**
+     * The threads run method contains the game loop to update everything.
+     * Furthermore this method limits the FPS to 60.
+     */
     @Override
     public void run() {
 
         long lastLoopTime = System.nanoTime();
-        final int TARGET_FPS = 60;
         final long OPTIMAL_TIME = 1000000000 / TARGET_FPS; // in nanoseconds
 
         // Game loop
@@ -73,6 +77,9 @@ public class Game implements Runnable {
         }
     }
 
+    /**
+     * Sets the Frame count for every second.
+     */
     private void calculateFPS() {
         if (lastFpsTime >= 1000000000) // Time in nanoseconds
         {
@@ -81,28 +88,28 @@ public class Game implements Runnable {
 
             lastFpsTime = 0;
             FPS = 0;
-
-            // Test
-            if(tempCount == 1) {
-                testBufferedImage = Assets.PLAYER1;
-                tempCount = 0;
-            } else {
-                testBufferedImage = Assets.PLAYER2;
-                tempCount = 1;
-            }
-
         }
     }
 
+    /**
+     * This method renders the Frame of the current game state.
+     */
     private void render() {
         Graphics2D g = (Graphics2D) bufferStrategy.getDrawGraphics();
         g.setColor(Color.BLACK);
         g.fillRect(0, 0, display.getWidth(), display.getHeight());
-        g.drawImage(testBufferedImage, 0, 0, testBufferedImage.getWidth(), testBufferedImage.getHeight(), null);
+
+        screen.render(g);
+
         g.dispose();
         bufferStrategy.show();
     }
 
+    /**
+     * Updates the logic of the game.
+     * deltaTime is used to sync the values with runtime.
+     * @param deltaTime
+     */
     private void doGameUpdates(double deltaTime)
     {
         /*for (int i = 0; i < stuff.size(); i++)
@@ -122,13 +129,21 @@ public class Game implements Runnable {
                 s.color = Color.BLUE;
             }
         }*/
+
+        screen.tick();
     }
 
+    /**
+     * Starts the gamethread, which starts the gameloop
+     */
     public synchronized void start() {
         running = true;
         new Thread(this).start();
     }
 
+    /**
+     * Stops the gameloop
+     */
     public synchronized void stop() {
         running = false;
     }
