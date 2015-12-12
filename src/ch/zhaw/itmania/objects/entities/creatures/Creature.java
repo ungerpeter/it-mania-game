@@ -1,11 +1,11 @@
-package ch.zhaw.itmania.entities.creatures;
+package ch.zhaw.itmania.objects.entities.creatures;
 
-import ch.zhaw.itmania.entities.Entity;
+import ch.zhaw.itmania.objects.entities.Entity;
 import ch.zhaw.itmania.gfx.Screen;
 import ch.zhaw.itmania.input.KeyManager;
 
 /**
- * ch.zhaw.itmania.entities.creatures
+ * ch.zhaw.itmania.objects.tiles.entities.creatures
  * Created by Peter Unger on 12.12.2015.
  */
 public abstract class Creature extends Entity {
