@@ -1,11 +1,13 @@
 package ch.zhaw.itmania.entities.creatures;
 
+import ch.zhaw.itmania.entities.Entity;
 import ch.zhaw.itmania.gfx.Animation;
 import ch.zhaw.itmania.gfx.Assets;
 import ch.zhaw.itmania.gfx.CameraListener;
-import ch.zhaw.itmania.gfx.Screen;
 import ch.zhaw.itmania.input.KeyManager;
+import ch.zhaw.itmania.worlds.World;
 
+import javax.swing.*;
 import java.awt.*;
 import java.util.HashMap;
 import java.util.Map;
@@ -18,10 +20,10 @@ public class Player extends Creature implements CameraListener {
 
     Map<String, Animation> animations = new HashMap<String, Animation>();
     Animation currentAnimation;
+    private int gold = 0;
 
-    public Player(Screen screen, float xPosition, float yPosition) {
-        super(screen, xPosition, yPosition);
-        currentDisplayImage = Assets.PLAYER2;
+    public Player(World world, float xPosition, float yPosition) {
+        super(world, xPosition, yPosition);
 
         boundaryBox.x = 5;
         boundaryBox.y = 10;
@@ -81,16 +83,21 @@ public class Player extends Creature implements CameraListener {
         }
     }
 
+    public void addGold(int amount) {
+        gold += amount;
+        System.out.println("Current Player Gold: " + gold);
+    }
+
     @Override
     public void tick(double deltaTime) {
-        updatePosition(screen.getKeyManager(), deltaTime);
+        updatePosition(world.getScreen().getKeyManager(), deltaTime);
         currentAnimation.tick(deltaTime);
-        screen.getCamera().follow(this);
+        world.getScreen().getCamera().follow(this);
     }
 
     @Override
     public void render(Graphics g) {
-        g.drawImage(currentAnimation.getCurrentAnimationFrame(), (int) (xPosition - screen.getCamera().getXOffset()), (int) (yPosition - screen.getCamera().getYOffset()), width, height, null);
+        g.drawImage(currentAnimation.getCurrentAnimationFrame(), (int) (xPosition - world.getScreen().getCamera().getXOffset()), (int) (yPosition - world.getScreen().getCamera().getYOffset()), width, height, null);
 
         /*g.setColor(Color.red);
         g.drawRect((int)(xPosition + boundaryBox.x - screen.getCamera().getXOffset()), (int)(yPosition + boundaryBox.y - screen.getCamera().getYOffset()), boundaryBox.width, boundaryBox.height);
@@ -98,7 +105,20 @@ public class Player extends Creature implements CameraListener {
     }
 
     @Override
+    public void onTouch(Entity entity) {
+        return;
+    }
+
+    @Override
     public void onCameraMove() {
         //System.out.println("Camera Moved");
+    }
+
+    @Override
+    protected void die() {
+        int result = JOptionPane.showConfirmDialog(world.getScreen().getDisplay().getWindowFrame(), "You are dead! Game will be closed now..", "Game over", JOptionPane.OK_OPTION);
+        if(result == JOptionPane.OK_OPTION || result == JOptionPane.NO_OPTION) {
+            System.exit(0);
+        }
     }
 }

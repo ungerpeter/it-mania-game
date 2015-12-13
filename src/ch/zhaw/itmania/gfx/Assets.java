@@ -12,7 +12,7 @@ public class Assets {
     public static final int DEFAULT_ASSETS_HEIGHT = height;
 
     // Entities
-    public static BufferedImage PLAYER1, PLAYER2;
+    public static BufferedImage COIN;
 
     // Animations
     public static BufferedImage[] PLAYER_DOWN_ANIMATION;
@@ -31,10 +31,10 @@ public class Assets {
         // Sprite sheets
         SpriteSheet playerSpriteSheet = new SpriteSheet("/sprite_player.png");
         SpriteSheet terrainSpriteSheet = new SpriteSheet("/tiles/terrain.png");
+        SpriteSheet itemsSpriteSheet = new SpriteSheet("/coin.png");
 
         // Entities
-        PLAYER1 = playerSpriteSheet.crop(width*0,height*0,width,height);
-        PLAYER2 = playerSpriteSheet.crop(width*1,height*0,width,height);
+        COIN = itemsSpriteSheet.crop(width*0,height*0,width,height);
 
         // Anmations
         PLAYER_DOWN_ANIMATION = new BufferedImage[3];

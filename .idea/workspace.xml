@@ -2,10 +2,18 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="805fd3be-6c4e-41a0-8555-695f6883bf92" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/ch/zhaw/itmania/gfx/Animation.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/res/coin.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/ch/zhaw/itmania/entities/Coin.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/ch/zhaw/itmania/entities/creatures/CreatureEventListener.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ch/zhaw/itmania/gfx/Assets.java" afterPath="$PROJECT_DIR$/src/ch/zhaw/itmania/gfx/Assets.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ch/zhaw/itmania/entities/creatures/Creature.java" afterPath="$PROJECT_DIR$/src/ch/zhaw/itmania/entities/creatures/Creature.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ch/zhaw/itmania/entities/Entity.java" afterPath="$PROJECT_DIR$/src/ch/zhaw/itmania/entities/Entity.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ch/zhaw/itmania/game/Game.java" afterPath="$PROJECT_DIR$/src/ch/zhaw/itmania/game/Game.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ch/zhaw/itmania/tiles/LavaTile.java" afterPath="$PROJECT_DIR$/src/ch/zhaw/itmania/tiles/LavaTile.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ch/zhaw/itmania/entities/creatures/Player.java" afterPath="$PROJECT_DIR$/src/ch/zhaw/itmania/entities/creatures/Player.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ch/zhaw/itmania/gfx/Screen.java" afterPath="$PROJECT_DIR$/src/ch/zhaw/itmania/gfx/Screen.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ch/zhaw/itmania/tiles/Tile.java" afterPath="$PROJECT_DIR$/src/ch/zhaw/itmania/tiles/Tile.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ch/zhaw/itmania/worlds/World.java" afterPath="$PROJECT_DIR$/src/ch/zhaw/itmania/worlds/World.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <list id="026f4e0f-01c2-49a5-909e-cdbb2ceaa33d" name="Rejected commit: Default" comment="JFrame added." />
@@ -32,14 +40,16 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="Player.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="Player.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/ch/zhaw/itmania/entities/creatures/Player.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.693299">
-              <caret line="71" column="0" selection-start-line="71" selection-start-column="0" selection-end-line="71" selection-end-column="0" />
+            <state vertical-scroll-proportion="0.0">
+              <caret line="89" column="0" selection-start-line="89" selection-start-column="0" selection-end-line="89" selection-end-column="0" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#516#535#0" expanded="true" />
+                <element signature="e#580#599#0" expanded="true" />
+                <element signature="e#3694#3695#0" expanded="true" />
+                <element signature="e#3716#3717#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -49,27 +59,10 @@
         <entry file="file://$PROJECT_DIR$/src/ch/zhaw/itmania/game/Game.java">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="134" column="25" selection-start-line="134" selection-start-column="25" selection-end-line="134" selection-end-column="25" />
+              <caret line="71" column="0" selection-start-line="71" selection-start-column="0" selection-end-line="71" selection-end-column="0" />
               <folding>
-                <element signature="e#3548#3549#0" expanded="true" />
-                <element signature="e#3579#3580#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Camera.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/ch/zhaw/itmania/gfx/Camera.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="37" column="0" selection-start-line="37" selection-start-column="0" selection-end-line="37" selection-end-column="0" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#192#208#0" expanded="true" />
-                <element signature="e#1065#1066#0" expanded="true" />
-                <element signature="e#1095#1096#0" expanded="true" />
-                <element signature="e#1128#1129#0" expanded="true" />
-                <element signature="e#1158#1159#0" expanded="true" />
+                <element signature="e#3550#3551#0" expanded="true" />
+                <element signature="e#3581#3582#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -79,66 +72,26 @@
         <entry file="file://$PROJECT_DIR$/src/ch/zhaw/itmania/entities/creatures/Creature.java">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="23" column="21" selection-start-line="23" selection-start-column="21" selection-end-line="23" selection-end-column="21" />
+              <caret line="47" column="0" selection-start-line="47" selection-start-column="0" selection-end-line="47" selection-end-column="0" />
               <folding>
-                <element signature="method#moveLeft#0;class#Creature#0" expanded="false" />
-                <element signature="method#moveRight#0;class#Creature#0" expanded="false" />
-                <element signature="method#moveUp#0;class#Creature#0" expanded="false" />
-                <element signature="method#moveDown#0;class#Creature#0" expanded="false" />
-                <element signature="method#detectCollision#0;class#Creature#0" expanded="false" />
+                <element signature="e#793#816#0" expanded="true" />
+                <element signature="method#addCreatureEventListener#0;class#Creature#0" expanded="false" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Assets.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/ch/zhaw/itmania/gfx/Assets.java">
+      <file leaf-file-name="Screen.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/ch/zhaw/itmania/gfx/Screen.java">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="48" column="90" selection-start-line="48" selection-start-column="90" selection-end-line="48" selection-end-column="90" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="sprite_player.png" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/res/sprite_player.png">
-          <provider selected="true" editor-type-id="images">
-            <state />
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Animation.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/ch/zhaw/itmania/gfx/Animation.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="34" column="13" selection-start-line="34" selection-start-column="13" selection-end-line="34" selection-end-column="13" />
+              <caret line="24" column="31" selection-start-line="24" selection-start-column="31" selection-end-line="24" selection-end-column="31" />
               <folding>
-                <element signature="e#1082#1083#0" expanded="true" />
-                <element signature="e#1127#1128#0" expanded="true" />
-                <element signature="e#1154#1155#0" expanded="true" />
-                <element signature="e#1185#1186#0" expanded="true" />
-                <element signature="e#1213#1214#0" expanded="true" />
-                <element signature="e#1243#1244#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Entity.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/ch/zhaw/itmania/entities/Entity.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="32" column="0" selection-start-line="32" selection-start-column="0" selection-end-line="32" selection-end-column="0" />
-              <folding>
-                <element signature="e#1173#1174#0" expanded="true" />
-                <element signature="e#1205#1206#0" expanded="true" />
-                <element signature="e#1240#1241#0" expanded="true" />
-                <element signature="e#1272#1273#0" expanded="true" />
-                <element signature="e#1301#1302#0" expanded="true" />
-                <element signature="e#1329#1330#0" expanded="true" />
-                <element signature="e#1359#1360#0" expanded="true" />
-                <element signature="e#1388#1389#0" expanded="true" />
+                <element signature="imports" expanded="true" />
+                <element signature="e#1030#1031#0" expanded="true" />
+                <element signature="e#1069#1070#0" expanded="true" />
+                <element signature="e#1441#1442#0" expanded="true" />
+                <element signature="e#1471#1472#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -148,7 +101,44 @@
         <entry file="file://$PROJECT_DIR$/src/ch/zhaw/itmania/worlds/World.java">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="38" column="0" selection-start-line="38" selection-start-column="0" selection-end-line="38" selection-end-column="0" />
+              <caret line="144" column="111" selection-start-line="144" selection-start-column="111" selection-end-line="144" selection-end-column="111" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#4620#4621#0" expanded="true" />
+                <element signature="e#4649#4650#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Assets.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/ch/zhaw/itmania/gfx/Assets.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="25" column="7" selection-start-line="25" selection-start-column="7" selection-end-line="25" selection-end-column="7" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Entity.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/ch/zhaw/itmania/entities/Entity.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="58" column="48" selection-start-line="58" selection-start-column="48" selection-end-line="58" selection-end-column="48" />
+              <folding>
+                <element signature="e#1323#1324#0" expanded="true" />
+                <element signature="e#1355#1356#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Coin.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/ch/zhaw/itmania/entities/Coin.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.82474226">
+              <caret line="44" column="0" selection-start-line="44" selection-start-column="0" selection-end-line="44" selection-end-column="0" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -204,16 +194,19 @@
         <option value="$PROJECT_DIR$/src/ch/zhaw/itmania/tiles/StoneTile.java" />
         <option value="$PROJECT_DIR$/src/ch/zhaw/itmania/tiles/BrickTile.java" />
         <option value="$PROJECT_DIR$/src/ch/zhaw/itmania/tiles/BooksTile.java" />
-        <option value="$PROJECT_DIR$/src/ch/zhaw/itmania/tiles/Tile.java" />
-        <option value="$PROJECT_DIR$/src/ch/zhaw/itmania/gfx/Screen.java" />
-        <option value="$PROJECT_DIR$/src/ch/zhaw/itmania/game/Game.java" />
         <option value="$PROJECT_DIR$/src/ch/zhaw/itmania/gfx/Camera.java" />
-        <option value="$PROJECT_DIR$/src/ch/zhaw/itmania/worlds/World.java" />
-        <option value="$PROJECT_DIR$/src/ch/zhaw/itmania/entities/Entity.java" />
-        <option value="$PROJECT_DIR$/src/ch/zhaw/itmania/entities/creatures/Creature.java" />
-        <option value="$PROJECT_DIR$/src/ch/zhaw/itmania/gfx/Assets.java" />
         <option value="$PROJECT_DIR$/src/ch/zhaw/itmania/gfx/Animation.java" />
+        <option value="$PROJECT_DIR$/src/ch/zhaw/itmania/game/Game.java" />
+        <option value="$PROJECT_DIR$/src/ch/zhaw/itmania/entities/creatures/CreatureEventListener.java" />
+        <option value="$PROJECT_DIR$/src/ch/zhaw/itmania/tiles/Tile.java" />
+        <option value="$PROJECT_DIR$/src/ch/zhaw/itmania/tiles/LavaTile.java" />
+        <option value="$PROJECT_DIR$/src/ch/zhaw/itmania/entities/creatures/Creature.java" />
+        <option value="$PROJECT_DIR$/src/ch/zhaw/itmania/gfx/Screen.java" />
+        <option value="$PROJECT_DIR$/src/ch/zhaw/itmania/gfx/Assets.java" />
+        <option value="$PROJECT_DIR$/src/ch/zhaw/itmania/entities/Entity.java" />
         <option value="$PROJECT_DIR$/src/ch/zhaw/itmania/entities/creatures/Player.java" />
+        <option value="$PROJECT_DIR$/src/ch/zhaw/itmania/worlds/World.java" />
+        <option value="$PROJECT_DIR$/src/ch/zhaw/itmania/entities/Coin.java" />
       </list>
     </option>
   </component>
@@ -441,32 +434,6 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="itmania" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="entities" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="creatures" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="it-mania" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="it-mania" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
               <option name="myItemId" value="res" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
@@ -490,8 +457,8 @@
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\Users\Peter\IdeaProjects\it-mania\res\tiles" />
       <recent name="C:\Users\Peter\IdeaProjects\it-mania\res" />
+      <recent name="C:\Users\Peter\IdeaProjects\it-mania\res\tiles" />
     </key>
   </component>
   <component name="RunManager" selected="Application.Unnamed">
@@ -750,7 +717,13 @@
       <option name="project" value="LOCAL" />
       <updated>1450027208349</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="Animation system added.&#10;Player walk is now animated.">
+      <created>1450033104630</created>
+      <option name="number" value="00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1450033104630</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="TodoView">
@@ -804,7 +777,7 @@
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.38906753" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.3376206" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33118972" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Coverage" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32980332" sideWeight="0.5" order="5" side_tool="true" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.329582" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -815,7 +788,7 @@
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.29421222" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4340836" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
     </layout-to-restore>
   </component>
   <component name="Vcs.Log.UiProperties">
@@ -839,11 +812,12 @@
     <MESSAGE value="Word feature added. World information is being loaded from a File in text format." />
     <MESSAGE value="First world created." />
     <MESSAGE value="Collision detection and Camera added.&#10;Camera is now following the player." />
-    <option name="LAST_COMMIT_MESSAGE" value="Collision detection and Camera added.&#10;Camera is now following the player." />
+    <MESSAGE value="Animation system added.&#10;Player walk is now animated." />
+    <option name="LAST_COMMIT_MESSAGE" value="Animation system added.&#10;Player walk is now animated." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="9" />
+      <option name="time" value="12" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -852,64 +826,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/ch/zhaw/itmania/tiles/Tile.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="38" column="34" selection-start-line="38" selection-start-column="34" selection-end-line="38" selection-end-column="34" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/ch/zhaw/itmania/gfx/Camera.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="2" column="3" selection-start-line="2" selection-start-column="3" selection-end-line="2" selection-end-column="3" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#192#208#0" expanded="true" />
-            <element signature="e#1065#1066#0" expanded="true" />
-            <element signature="e#1095#1096#0" expanded="true" />
-            <element signature="e#1128#1129#0" expanded="true" />
-            <element signature="e#1158#1159#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/res/worlds/world.wld">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/ch/zhaw/itmania/game/Game.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="51" column="30" selection-start-line="51" selection-start-column="30" selection-end-line="51" selection-end-column="30" />
-          <folding>
-            <element signature="e#3548#3549#0" expanded="true" />
-            <element signature="e#3579#3580#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/ch/zhaw/itmania/entities/creatures/Creature.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="21" column="30" selection-start-line="21" selection-start-column="30" selection-end-line="21" selection-end-column="30" />
-          <folding>
-            <element signature="method#moveLeft#0;class#Creature#0" expanded="false" />
-            <element signature="method#moveRight#0;class#Creature#0" expanded="false" />
-            <element signature="method#moveUp#0;class#Creature#0" expanded="false" />
-            <element signature="method#moveDown#0;class#Creature#0" expanded="false" />
-            <element signature="method#detectCollision#0;class#Creature#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/ch/zhaw/itmania/gfx/Assets.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -924,10 +840,10 @@
           <caret line="49" column="31" selection-start-line="49" selection-start-column="31" selection-end-line="49" selection-end-column="31" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#1510#1511#0" expanded="true" />
-            <element signature="e#1551#1552#0" expanded="true" />
-            <element signature="e#1581#1582#0" expanded="true" />
-            <element signature="e#1623#1624#0" expanded="true" />
+            <element signature="e#1030#1031#0" expanded="true" />
+            <element signature="e#1069#1070#0" expanded="true" />
+            <element signature="e#1441#1442#0" expanded="true" />
+            <element signature="e#1471#1472#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -938,6 +854,8 @@
           <caret line="27" column="0" selection-start-line="27" selection-start-column="0" selection-end-line="27" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
+            <element signature="e#4620#4621#0" expanded="true" />
+            <element signature="e#4649#4650#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -948,7 +866,9 @@
           <caret line="16" column="8" selection-start-line="16" selection-start-column="8" selection-end-line="16" selection-end-column="8" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#516#535#0" expanded="true" />
+            <element signature="e#580#599#0" expanded="true" />
+            <element signature="e#3694#3695#0" expanded="true" />
+            <element signature="e#3716#3717#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -959,6 +879,8 @@
           <caret line="26" column="34" selection-start-line="26" selection-start-column="34" selection-end-line="26" selection-end-column="34" />
           <folding>
             <element signature="imports" expanded="true" />
+            <element signature="e#1771#1772#0" expanded="true" />
+            <element signature="e#1793#1794#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -969,6 +891,8 @@
           <caret line="35" column="0" selection-start-line="35" selection-start-column="0" selection-end-line="35" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
+            <element signature="e#4620#4621#0" expanded="true" />
+            <element signature="e#4649#4650#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -997,10 +921,10 @@
           <caret line="26" column="47" selection-start-line="26" selection-start-column="47" selection-end-line="26" selection-end-column="47" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#1510#1511#0" expanded="true" />
-            <element signature="e#1551#1552#0" expanded="true" />
-            <element signature="e#1581#1582#0" expanded="true" />
-            <element signature="e#1623#1624#0" expanded="true" />
+            <element signature="e#1030#1031#0" expanded="true" />
+            <element signature="e#1069#1070#0" expanded="true" />
+            <element signature="e#1441#1442#0" expanded="true" />
+            <element signature="e#1471#1472#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -1036,8 +960,8 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="109" column="22" selection-start-line="109" selection-start-column="22" selection-end-line="109" selection-end-column="22" />
           <folding>
-            <element signature="e#3548#3549#0" expanded="true" />
-            <element signature="e#3579#3580#0" expanded="true" />
+            <element signature="e#3550#3551#0" expanded="true" />
+            <element signature="e#3581#3582#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -1062,8 +986,8 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="e#3548#3549#0" expanded="true" />
-            <element signature="e#3579#3580#0" expanded="true" />
+            <element signature="e#3550#3551#0" expanded="true" />
+            <element signature="e#3581#3582#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -1073,8 +997,8 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="e#3548#3549#0" expanded="true" />
-            <element signature="e#3579#3580#0" expanded="true" />
+            <element signature="e#3550#3551#0" expanded="true" />
+            <element signature="e#3581#3582#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -1084,8 +1008,8 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="e#3548#3549#0" expanded="true" />
-            <element signature="e#3579#3580#0" expanded="true" />
+            <element signature="e#3550#3551#0" expanded="true" />
+            <element signature="e#3581#3582#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -1124,7 +1048,7 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="50" column="7" selection-start-line="50" selection-start-column="7" selection-end-line="50" selection-end-column="7" />
           <folding>
-            <element signature="imports" expanded="true" />
+            <element signature="imports" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1175,11 +1099,11 @@
         <state vertical-scroll-proportion="0.17525773">
           <caret line="27" column="0" selection-start-line="27" selection-start-column="0" selection-end-line="27" selection-end-column="0" />
           <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#650#651#0" expanded="true" />
-            <element signature="e#693#694#0" expanded="true" />
-            <element signature="e#750#751#0" expanded="true" />
-            <element signature="e#794#795#0" expanded="true" />
+            <element signature="imports" expanded="false" />
+            <element signature="e#650#651#0" expanded="false" />
+            <element signature="e#693#694#0" expanded="false" />
+            <element signature="e#750#751#0" expanded="false" />
+            <element signature="e#794#795#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1213,17 +1137,6 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="7" column="3" selection-start-line="7" selection-start-column="3" selection-end-line="7" selection-end-column="3" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/ch/zhaw/itmania/tiles/LavaTile.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="10" column="26" selection-start-line="10" selection-start-column="26" selection-end-line="10" selection-end-column="26" />
-          <folding>
-            <element signature="e#207#208#0" expanded="true" />
-            <element signature="e#250#251#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1269,23 +1182,14 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/ch/zhaw/itmania/gfx/Screen.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="68" column="35" selection-start-line="68" selection-start-column="35" selection-end-line="68" selection-end-column="35" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#1510#1511#0" expanded="true" />
-            <element signature="e#1551#1552#0" expanded="true" />
-            <element signature="e#1581#1582#0" expanded="true" />
-            <element signature="e#1623#1624#0" expanded="true" />
-          </folding>
-        </state>
+    <entry file="file://$PROJECT_DIR$/res/sprite_player.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/ch/zhaw/itmania/gfx/Camera.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
+        <state vertical-scroll-proportion="0.48195878">
           <caret line="37" column="0" selection-start-line="37" selection-start-column="0" selection-end-line="37" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
@@ -1298,85 +1202,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/ch/zhaw/itmania/entities/Entity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="32" column="0" selection-start-line="32" selection-start-column="0" selection-end-line="32" selection-end-column="0" />
-          <folding>
-            <element signature="e#1173#1174#0" expanded="true" />
-            <element signature="e#1205#1206#0" expanded="true" />
-            <element signature="e#1240#1241#0" expanded="true" />
-            <element signature="e#1272#1273#0" expanded="true" />
-            <element signature="e#1301#1302#0" expanded="true" />
-            <element signature="e#1329#1330#0" expanded="true" />
-            <element signature="e#1359#1360#0" expanded="true" />
-            <element signature="e#1388#1389#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/ch/zhaw/itmania/worlds/World.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="38" column="0" selection-start-line="38" selection-start-column="0" selection-end-line="38" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/ch/zhaw/itmania/entities/creatures/Creature.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="23" column="21" selection-start-line="23" selection-start-column="21" selection-end-line="23" selection-end-column="21" />
-          <folding>
-            <element signature="method#moveLeft#0;class#Creature#0" expanded="false" />
-            <element signature="method#moveRight#0;class#Creature#0" expanded="false" />
-            <element signature="method#moveUp#0;class#Creature#0" expanded="false" />
-            <element signature="method#moveDown#0;class#Creature#0" expanded="false" />
-            <element signature="method#detectCollision#0;class#Creature#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/ch/zhaw/itmania/game/Game.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="134" column="25" selection-start-line="134" selection-start-column="25" selection-end-line="134" selection-end-column="25" />
-          <folding>
-            <element signature="e#3548#3549#0" expanded="true" />
-            <element signature="e#3579#3580#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/ch/zhaw/itmania/tiles/Tile.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="1.5335052">
-          <caret line="35" column="35" selection-start-line="35" selection-start-column="35" selection-end-line="35" selection-end-column="35" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/ch/zhaw/itmania/gfx/Assets.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="48" column="90" selection-start-line="48" selection-start-column="90" selection-end-line="48" selection-end-column="90" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/res/sprite_player.png">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/ch/zhaw/itmania/gfx/Animation.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="34" column="13" selection-start-line="34" selection-start-column="13" selection-end-line="34" selection-end-column="13" />
+          <caret line="40" column="5" selection-start-line="40" selection-start-column="5" selection-end-line="40" selection-end-column="5" />
           <folding>
             <element signature="e#1082#1083#0" expanded="true" />
             <element signature="e#1127#1128#0" expanded="true" />
@@ -1388,13 +1217,199 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/ch/zhaw/itmania/entities/creatures/Player.java">
+    <entry file="file://$PROJECT_DIR$/src/ch/zhaw/itmania/entities/creatures/CreatureEventListener.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.693299">
-          <caret line="71" column="0" selection-start-line="71" selection-start-column="0" selection-end-line="71" selection-end-column="0" />
+        <state vertical-scroll-proportion="0.0">
+          <caret line="6" column="40" selection-start-line="6" selection-start-column="40" selection-end-line="6" selection-end-column="40" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ch/zhaw/itmania/tiles/Tile.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="54" column="37" selection-start-line="54" selection-start-column="37" selection-end-line="54" selection-end-column="37" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#516#535#0" expanded="true" />
+            <element signature="e#1771#1772#0" expanded="true" />
+            <element signature="e#1793#1794#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ch/zhaw/itmania/tiles/LavaTile.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="22" column="0" selection-start-line="22" selection-start-column="0" selection-end-line="22" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#299#300#0" expanded="true" />
+            <element signature="e#342#343#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files (x86)/Java/jdk1.8.0_60/src.zip!/java/util/ArrayList.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="900" column="0" selection-start-line="900" selection-start-column="0" selection-end-line="900" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files (x86)/Java/jdk1.8.0_60/src.zip!/java/lang/Thread.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="744" column="0" selection-start-line="744" selection-start-column="0" selection-end-line="744" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#78741#0" expanded="false" />
+            <element signature="imports" expanded="false" />
+            <element signature="e#5560#5561#0" expanded="false" />
+            <element signature="e#5601#5602#0" expanded="false" />
+            <element signature="e#6683#6684#0" expanded="false" />
+            <element signature="e#6723#6724#0" expanded="false" />
+            <element signature="e#14796#14797#0" expanded="false" />
+            <element signature="e#14860#14861#0" expanded="false" />
+            <element signature="e#15480#15481#0" expanded="false" />
+            <element signature="e#15546#15547#0" expanded="false" />
+            <element signature="e#15734#15735#0" expanded="false" />
+            <element signature="e#15805#15806#0" expanded="false" />
+            <element signature="e#17015#17016#0" expanded="false" />
+            <element signature="e#17082#17083#0" expanded="false" />
+            <element signature="e#17388#17389#0" expanded="false" />
+            <element signature="e#17429#17430#0" expanded="false" />
+            <element signature="e#18347#18348#0" expanded="false" />
+            <element signature="e#18389#18390#0" expanded="false" />
+            <element signature="e#18901#18902#0" expanded="false" />
+            <element signature="e#18944#18945#0" expanded="false" />
+            <element signature="e#21244#21245#0" expanded="false" />
+            <element signature="e#21288#21289#0" expanded="false" />
+            <element signature="e#33357#33358#0" expanded="false" />
+            <element signature="e#33414#33415#0" expanded="false" />
+            <element signature="e#36478#36479#0" expanded="false" />
+            <element signature="e#36536#36537#0" expanded="false" />
+            <element signature="e#37073#37074#0" expanded="false" />
+            <element signature="e#37116#37117#0" expanded="false" />
+            <element signature="e#38390#38391#0" expanded="false" />
+            <element signature="e#38435#38436#0" expanded="false" />
+            <element signature="e#42725#42726#0" expanded="false" />
+            <element signature="e#42756#42757#0" expanded="false" />
+            <element signature="e#43646#43647#0" expanded="false" />
+            <element signature="e#43691#43692#0" expanded="false" />
+            <element signature="e#43948#43949#0" expanded="false" />
+            <element signature="e#43976#43977#0" expanded="false" />
+            <element signature="e#44834#44835#0" expanded="false" />
+            <element signature="e#44903#44904#0" expanded="false" />
+            <element signature="e#46236#46237#0" expanded="false" />
+            <element signature="e#46309#46310#0" expanded="false" />
+            <element signature="e#50771#50772#0" expanded="false" />
+            <element signature="e#50833#50834#0" expanded="false" />
+            <element signature="e#51927#51928#0" expanded="false" />
+            <element signature="e#51956#51957#0" expanded="false" />
+            <element signature="e#65707#65708#0" expanded="false" />
+            <element signature="e#65733#65734#0" expanded="false" />
+            <element signature="e#75713#75714#0" expanded="false" />
+            <element signature="e#75785#75786#0" expanded="false" />
+            <element signature="e#76971#76972#0" expanded="false" />
+            <element signature="e#77006#77007#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ch/zhaw/itmania/gfx/Assets.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="25" column="7" selection-start-line="25" selection-start-column="7" selection-end-line="25" selection-end-column="7" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ch/zhaw/itmania/game/Game.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="71" column="0" selection-start-line="71" selection-start-column="0" selection-end-line="71" selection-end-column="0" />
+          <folding>
+            <element signature="e#3550#3551#0" expanded="true" />
+            <element signature="e#3581#3582#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ch/zhaw/itmania/gfx/Screen.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="24" column="31" selection-start-line="24" selection-start-column="31" selection-end-line="24" selection-end-column="31" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#1030#1031#0" expanded="true" />
+            <element signature="e#1069#1070#0" expanded="true" />
+            <element signature="e#1441#1442#0" expanded="true" />
+            <element signature="e#1471#1472#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ch/zhaw/itmania/entities/Entity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="58" column="48" selection-start-line="58" selection-start-column="48" selection-end-line="58" selection-end-column="48" />
+          <folding>
+            <element signature="e#1323#1324#0" expanded="true" />
+            <element signature="e#1355#1356#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ch/zhaw/itmania/entities/creatures/Creature.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="47" column="0" selection-start-line="47" selection-start-column="0" selection-end-line="47" selection-end-column="0" />
+          <folding>
+            <element signature="e#793#816#0" expanded="true" />
+            <element signature="method#addCreatureEventListener#0;class#Creature#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files (x86)/Java/jdk1.8.0_60/src.zip!/java/lang/Override.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.6494845">
+          <caret line="50" column="18" selection-start-line="50" selection-start-column="18" selection-end-line="50" selection-end-column="18" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ch/zhaw/itmania/entities/creatures/Player.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="89" column="0" selection-start-line="89" selection-start-column="0" selection-end-line="89" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#580#599#0" expanded="true" />
+            <element signature="e#3694#3695#0" expanded="true" />
+            <element signature="e#3716#3717#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ch/zhaw/itmania/worlds/World.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="144" column="111" selection-start-line="144" selection-start-column="111" selection-end-line="144" selection-end-column="111" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#4620#4621#0" expanded="true" />
+            <element signature="e#4649#4650#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ch/zhaw/itmania/entities/Coin.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.82474226">
+          <caret line="44" column="0" selection-start-line="44" selection-start-column="0" selection-end-line="44" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>

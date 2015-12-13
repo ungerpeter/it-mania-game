@@ -4,6 +4,9 @@ import ch.zhaw.itmania.entities.Entity;
 import ch.zhaw.itmania.gfx.Screen;
 import ch.zhaw.itmania.input.KeyManager;
 import ch.zhaw.itmania.tiles.Tile;
+import ch.zhaw.itmania.worlds.World;
+
+import java.util.ArrayList;
 
 /**
  * ch.zhaw.itmania.tiles.entities.creatures
@@ -17,14 +20,18 @@ public abstract class Creature extends Entity {
     public static final int DIRECTION_DOWN_ID = 1;
     public static final int DIRECTION_LEFT_ID = 2;
     public static final int DIRECTION_RIGHT_ID = 3;
+    protected ArrayList<CreatureEventListener> creatureEventListeners = new ArrayList<CreatureEventListener>();
     protected final float speed;
     protected int health;
 
-
-    public Creature(Screen screen, float xPosition, float yPosition) {
-        super(screen, xPosition, yPosition);
+    public Creature(World world, float xPosition, float yPosition) {
+        super(world, xPosition, yPosition);
         health = DEFAULT_HEALTH;
         speed = DEFAULT_SPEED;
+    }
+
+    public void addCreatureEventListener(CreatureEventListener eventListener) {
+        creatureEventListeners.add(eventListener);
     }
 
     protected abstract void updatePosition(KeyManager keyManager, double deltaTime);
@@ -32,24 +39,34 @@ public abstract class Creature extends Entity {
     protected void moveLeft(float amount) {
         if(!detectCollision(DIRECTION_LEFT_ID, amount)) {
             xPosition -= amount;
+            moved();
         }
     }
+
+    protected void moved() {
+        for(CreatureEventListener listener : creatureEventListeners) {
+            listener.onCreatureMoved(this);
+        }
+    };
 
     protected void moveRight(float amount) {
         if(!detectCollision(DIRECTION_RIGHT_ID, amount)) {
             xPosition += amount;
+            moved();
         }
     }
 
     protected void moveUp(float amount) {
         if(!detectCollision(DIRECTION_UP_ID, amount)) {
             yPosition -= amount;
+            moved();
         }
     }
 
     protected void moveDown(float amount) {
         if(!detectCollision(DIRECTION_DOWN_ID, amount)) {
             yPosition += amount;
+            moved();
         }
     }
 
@@ -81,11 +98,28 @@ public abstract class Creature extends Entity {
             // TODO: directions still buggy  -> have to check all 4 corners
         }
 
-        if(screen.getWorld().getTile(tryPosX, tryPosY).isSolid()) {
+        if (world.getTile(tryPosX, tryPosY).isSolid()) {
             return true;
         } else {
             return false;
         }
     }
 
+    public void setHealth(int health) {
+        this.health = health;
+        checkIfAlive();
+    }
+
+    protected boolean checkIfAlive() {
+        if(health > 0) {
+            return true;
+        } else {
+            die();
+            return false;
+        }
+    }
+
+    protected void die() {
+        //screen.getWorld().removeEntity(this);
+    }
 }

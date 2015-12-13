@@ -91,7 +91,7 @@ public class Game implements Runnable {
         if (lastFpsTime >= 1000000000) // Time in nanoseconds
         {
             // Debug info
-            System.out.println("(FPS: "+ FPS +")");
+            //System.out.println("(FPS: "+ FPS +")");
 
             lastFpsTime = 0;
             FPS = 0;

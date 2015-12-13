@@ -1,8 +1,10 @@
 package ch.zhaw.itmania.entities;
 
+import ch.zhaw.itmania.entities.creatures.Creature;
 import ch.zhaw.itmania.gfx.Assets;
 import ch.zhaw.itmania.gfx.Screen;
 import ch.zhaw.itmania.tiles.Tile;
+import ch.zhaw.itmania.worlds.World;
 
 import java.awt.*;
 import java.awt.image.BufferedImage;
@@ -15,14 +17,14 @@ public abstract class Entity {
 
     public static final float DEFAULT_SIZE = 1f;
 
-    protected Screen screen;
+    protected World world;
     protected BufferedImage currentDisplayImage;
     protected float xPosition, yPosition, size;
     protected int width, height;
     protected Rectangle boundaryBox;
 
-    public Entity(Screen screen, float xPosition, float yPosition) {
-        this.screen = screen;
+    public Entity(World world, float xPosition, float yPosition) {
+        this.world = world;
         this.xPosition = xPosition;
         this.yPosition = yPosition;
         this.size = DEFAULT_SIZE;
@@ -54,4 +56,5 @@ public abstract class Entity {
         return height;
     }
 
+    public abstract void onTouch(Entity entity);
 }

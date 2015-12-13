@@ -15,7 +15,6 @@ import java.util.ArrayList;
  */
 public class Screen {
 
-    ArrayList<Entity> entities = new ArrayList<>();
     Display display;
     KeyManager keyManager;
     World world;
@@ -25,28 +24,21 @@ public class Screen {
 
         this.display = display;
         this.keyManager = keyManager;
-        world = new World("res/worlds/world.wld");
-        entities.add(new Player(this, world.getPlayerSpawnX(), world.getPlayerSpawnY()));
+        world = new World(this, "res/worlds/world.wld");
+        Entity player = (new Player(world , world.getPlayerSpawnX(), world.getPlayerSpawnY()));
+        world.addEntity(player);
         camera = new Camera(this, 0, 0);
-        camera.addCameraListener((CameraListener) entities.get(0));
+        camera.addCameraListener((CameraListener) player);
 
     }
 
     public void tick(double deltaTime) {
         keyManager.tick();
-        world.tick();
-        for (int i = 0; i < entities.size(); i++) {
-            entities.get(i).tick(deltaTime);
-        }
+        world.tick(deltaTime);
     }
 
     public void render(Graphics g) {
-
         world.render(g, camera);
-
-        for (int i = 0; i < entities.size(); i++) {
-            entities.get(i).render(g);
-        }
     }
 
     public KeyManager getKeyManager() {
@@ -67,5 +59,9 @@ public class Screen {
 
     public int getHeight() {
         return display.getHeight();
+    }
+
+    public Display getDisplay() {
+        return display;
     }
 }

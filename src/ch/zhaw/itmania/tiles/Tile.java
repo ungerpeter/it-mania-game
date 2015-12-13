@@ -1,5 +1,6 @@
 package ch.zhaw.itmania.tiles;
 
+import ch.zhaw.itmania.entities.Entity;
 import ch.zhaw.itmania.gfx.Camera;
 
 import java.awt.*;
@@ -49,6 +50,10 @@ public class Tile {
 
     public boolean isSolid() {
         return false;
+    }
+
+    public void onTouch(Entity entity) {
+        return;
     }
 
     public int getId() {
