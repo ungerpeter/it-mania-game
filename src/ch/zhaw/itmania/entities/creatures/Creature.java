@@ -60,26 +60,25 @@ public abstract class Creature extends Entity {
 
         switch (direction) {
             case DIRECTION_UP_ID:
-                tryPosX = (int) (xPosition / Tile.DEFAULT_TILE_WIDTH);
+                tryPosX = (int) ((xPosition + boundaryBox.x) / Tile.DEFAULT_TILE_WIDTH);
                 tryPosY = (int) ((yPosition - amount + boundaryBox.y) / Tile.DEFAULT_TILE_HEIGHT);
-                // TODO: Little buggy
                 break;
 
             case DIRECTION_DOWN_ID:
-                tryPosX = (int) (xPosition / Tile.DEFAULT_TILE_WIDTH);
+                tryPosX = (int) ((xPosition + boundaryBox.x) / Tile.DEFAULT_TILE_WIDTH);
                 tryPosY = (int) ((yPosition + amount + boundaryBox.y + boundaryBox.height) / Tile.DEFAULT_TILE_HEIGHT);
                 break;
 
             case DIRECTION_LEFT_ID:
                 tryPosX = (int) ((xPosition - amount + boundaryBox.x) / Tile.DEFAULT_TILE_WIDTH);
-                tryPosY = (int) (yPosition / Tile.DEFAULT_TILE_HEIGHT);
-                // TODO: Little buggy
+                tryPosY = (int) ((yPosition + boundaryBox.y) / Tile.DEFAULT_TILE_HEIGHT);
                 break;
 
             case DIRECTION_RIGHT_ID:
                 tryPosX = (int) ((xPosition + amount + boundaryBox.x + boundaryBox.width) / Tile.DEFAULT_TILE_WIDTH);
-                tryPosY = (int) (yPosition / Tile.DEFAULT_TILE_HEIGHT);
+                tryPosY = (int) ((yPosition + boundaryBox.y) / Tile.DEFAULT_TILE_HEIGHT);
                 break;
+            // TODO: directions still buggy  -> have to check all 4 corners
         }
 
         if(screen.getWorld().getTile(tryPosX, tryPosY).isSolid()) {
