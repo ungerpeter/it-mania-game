@@ -3,6 +3,7 @@ package ch.zhaw.itmania.game;
 import ch.zhaw.itmania.gfx.Assets;
 import ch.zhaw.itmania.gfx.Screen;
 import ch.zhaw.itmania.input.KeyManager;
+import ch.zhaw.itmania.tiles.Tile;
 
 import java.awt.*;
 import java.awt.image.BufferStrategy;
@@ -24,11 +25,15 @@ public class Game implements Runnable {
     private boolean running = false;
     private long lastFpsTime;
     private int FPS;
+    private Graphics2D g;
 
     public Game() {
 
         // Load Assets
         Assets.init();
+
+        // Load Tiles
+        Tile.init();
 
         // Load Display
         display = new Display();
@@ -37,7 +42,7 @@ public class Game implements Runnable {
         // Setup Key Manager
         KeyManager keyManager = new KeyManager();
         display.getWindowFrame().addKeyListener(keyManager);
-        screen = new Screen(keyManager);
+        screen = new Screen(display, keyManager);
     }
 
     /**
@@ -49,6 +54,7 @@ public class Game implements Runnable {
 
         long lastLoopTime = System.nanoTime();
         final long OPTIMAL_TIME = 1000000000 / TARGET_FPS; // in nanoseconds
+        //final long TEST_TIME = 1000000000 / 15; // Lock to 15 FPS for testing purpose
 
         // Game loop
         while (running)
@@ -57,6 +63,7 @@ public class Game implements Runnable {
             long updateLength = now - lastLoopTime;
             lastLoopTime = now;
             double deltaTime = updateLength / ((double)OPTIMAL_TIME);
+            //System.out.println(deltaTime);
 
             lastFpsTime += updateLength;
             FPS++;
@@ -95,12 +102,12 @@ public class Game implements Runnable {
      * This method renders the Frame of the current game state.
      */
     private void render() {
-        Graphics2D g = (Graphics2D) bufferStrategy.getDrawGraphics();
+        g = (Graphics2D) bufferStrategy.getDrawGraphics();
+
         g.setColor(Color.BLACK);
         g.fillRect(0, 0, display.getWidth(), display.getHeight());
 
         screen.render(g);
-
         g.dispose();
         bufferStrategy.show();
     }
@@ -112,25 +119,8 @@ public class Game implements Runnable {
      */
     private void doGameUpdates(double deltaTime)
     {
-        /*for (int i = 0; i < stuff.size(); i++)
-        {
-            // all time-related values must be multiplied by delta!
-            Stuff s = stuff.get(i);
-            s.velocity += Gravity.VELOCITY * delta;
-            s.position += s.velocity * delta;
-
-            // stuff that isn't time-related doesn't care about delta...
-            if (s.velocity >= 1000)
-            {
-                s.color = Color.RED;
-            }
-            else
-            {
-                s.color = Color.BLUE;
-            }
-        }*/
-
-        screen.tick();
+        // all time-related values must be multiplied by delta
+        screen.tick(deltaTime);
     }
 
     /**

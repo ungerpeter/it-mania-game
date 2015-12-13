@@ -1,7 +1,5 @@
 package ch.zhaw.itmania.gfx;
 
-import ch.zhaw.itmania.objects.tiles.Tile;
-
 import java.awt.image.BufferedImage;
 
 /**
@@ -10,8 +8,8 @@ import java.awt.image.BufferedImage;
 public class Assets {
 
     private static final int width = 32, height = 32;
-    public static final int DEFAULT_TILES_WIDTH = width;
-    public static final int DEFAULT_TILES_HEIGHT = height;
+    public static final int DEFAULT_ASSETS_WIDTH = width;
+    public static final int DEFAULT_ASSETS_HEIGHT = height;
 
     // Entities
     public static BufferedImage PLAYER1, PLAYER2;

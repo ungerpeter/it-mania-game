@@ -1,20 +1,20 @@
-package ch.zhaw.itmania.objects.tiles;
+package ch.zhaw.itmania.tiles;
 
-import ch.zhaw.itmania.objects.GameObject;
+import ch.zhaw.itmania.gfx.Camera;
 
 import java.awt.*;
 import java.awt.image.BufferedImage;
 
 /**
- * ch.zhaw.itmania.objects.tiles
+ * ch.zhaw.itmania.tiles
  * Created by Peter Unger on 12.12.2015.
  */
-public class Tile extends GameObject {
+public class Tile {
 
     public static Tile[] tiles = new Tile[8];
 
-    private static final int DEFAULT_TILE_HEIGHT = 32;
-    private static final int DEFAULT_TILE_WIDTH = 32;
+    public static final int DEFAULT_TILE_HEIGHT = 32;
+    public static final int DEFAULT_TILE_WIDTH = 32;
     protected BufferedImage texture;
     protected final int id;
 
@@ -30,7 +30,9 @@ public class Tile extends GameObject {
     public Tile(BufferedImage texture, int id) {
         this.texture = texture;
         this.id = id;
+    }
 
+    public static void init() {
         tiles[0] = Tile.GRASS_TILE;
         tiles[1] = Tile.STONE_TILE;
         tiles[2] = Tile.DIRT_TILE;
@@ -41,19 +43,8 @@ public class Tile extends GameObject {
         tiles[7] = Tile.STREET_TILE;
     }
 
-    @Override
-    public void tick() {
-
-    }
-
-    @Override
-    public void render(Graphics g) {
-        // TODO: Correct position parameters
-        g.drawImage(texture, 0, 0, DEFAULT_TILE_WIDTH, DEFAULT_TILE_HEIGHT, null);
-    }
-
-    public void render(Graphics g, int xPosition, int yPosition) {
-        g.drawImage(texture, xPosition, yPosition, DEFAULT_TILE_WIDTH, DEFAULT_TILE_HEIGHT, null);
+    public void render(Graphics g, int xPosition, int yPosition, Camera camera) {
+        g.drawImage(texture, xPosition - (int)camera.getXOffset(), yPosition - (int)camera.getYOffset(), DEFAULT_TILE_WIDTH, DEFAULT_TILE_HEIGHT, null);
     }
 
     public boolean isSolid() {
